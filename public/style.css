@@ -2,9 +2,14 @@ body {
   background-color: #FB6B6B;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .page {
   max-width: 614px;
   height: 100vh;
+  align-items: center;
 }
 
 .landingPage {
@@ -35,4 +40,122 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+}
+
+.header {
+  font-family: Righteous, cursive;
+  color: white;
+  font-weight: 400;
+
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.header img {
+  width: 52px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.questions {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.statusbar {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  background-color: white;
+  color: #333333;
+  font-family: Recursive;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.flash-card {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+
+  font-family: Recursive;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.showQuestion {
+  min-height: 120px;
+  position: relative;
+  background-color: #FFFFD4;
+
+  color: #333333;
+  font-weight: 400;
+
+  align-items: initial;
+
+  transition: all 0.1s linear;
+}
+
+.showQuestion img{
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.turned {
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttons button {
+  width: 85px;
+  height: 37px;
+
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-family: Recursive;
+  font-size: 12px;
+}
+
+.buttons :nth-child(1) {
+  background-color: #FF3030;
+  ;
+}
+
+.buttons :nth-child(2) {
+  background-color: #FF922E;
+  ;
+}
+.buttons :nth-child(3) {
+  background-color: #2FBE34;
+
+  ;
 }
