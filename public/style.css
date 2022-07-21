@@ -61,7 +61,7 @@ body {
 }
 
 .questions {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +113,7 @@ body {
 
   align-items: initial;
 
-  transition: all 0.1s linear;
+  transition: all 1s linear;
 }
 
 .showQuestion img{
@@ -147,15 +147,28 @@ body {
 
 .buttons :nth-child(1) {
   background-color: #FF3030;
-  ;
 }
 
 .buttons :nth-child(2) {
   background-color: #FF922E;
-  ;
 }
 .buttons :nth-child(3) {
   background-color: #2FBE34;
+}
 
-  ;
+.color1 {
+  color: #FF3030;
+  text-decoration: line-through;
+}
+.color2 {
+  color: #FF922E;
+  text-decoration: line-through;
+}
+.color3 {
+  color: #2FBE34;
+  text-decoration: line-through;
+}
+
+.flash-card ion-icon {
+  font-size: 30px;
 }

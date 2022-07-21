@@ -1,7 +1,8 @@
-const Statubar = () => {
+const Statubar = ({ questionCount, questionIconList }) => {
   return (
     <div className="statusbar">
-      <p>0/4 CONCLUÍDOS</p>
+      <p>{questionCount}/4 CONCLUÍDOS</p>
+      {questionIconList}
     </div>
   )
 }
