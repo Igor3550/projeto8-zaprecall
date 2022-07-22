@@ -2,22 +2,18 @@ import React from 'react';
 
 import logo from '../assets/images/logo.png'
 
-const Landing = () => {
+const Landing = ({ setHideLandingPage }) => {
 
-  const [hidePage, setHidePage] = React.useState(true)
+  function hidePage () {
+    setHideLandingPage(true);
+  }
 
   return (
-
-    hidePage ? 
-      (<></>)
-    : 
-      (
-        <div className="landingPage">
-          <img src={logo} />
-          <h1>ZapRecall</h1>
-          <button onClick={() => setHidePage(true)}>Iniciar Recall!</button>
-        </div>
-      )
+    <div className="landingPage">
+      <img src={logo} />
+      <h1>ZapRecall</h1>
+      <button onClick={hidePage}>Iniciar Recall!</button>
+    </div>
   )
 }
 

@@ -51,7 +51,7 @@ body {
   width: 100vw;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 .header img {
@@ -70,8 +70,9 @@ body {
 
 .statusbar {
   width: 100vw;
-  height: 70px;
+  min-height: 70px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -87,6 +88,7 @@ body {
 
 .flash-card {
   width: 80%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,10 +103,11 @@ body {
   font-family: Recursive;
   font-size: 16px;
   font-weight: 700;
+  transition: all 1s linear;
 }
 
 .showQuestion {
-  min-height: 120px;
+  height: 150px;
   position: relative;
   background-color: #FFFFD4;
 
@@ -112,8 +115,8 @@ body {
   font-weight: 400;
 
   align-items: initial;
-
   transition: all 1s linear;
+
 }
 
 .showQuestion img{
@@ -171,4 +174,31 @@ body {
 
 .flash-card ion-icon {
   font-size: 30px;
+}
+
+.statusbar p {
+  margin: 0;
+}
+
+.statusbar ion-icon {
+  font-size: 30px;
+}
+.result-message {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result-message :first-child{
+  font-family: Recursive;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+}
+.result-message p{
+  text-align: center;
+  padding-bottom: 15px;
 }

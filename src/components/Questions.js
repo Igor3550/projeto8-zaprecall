@@ -46,7 +46,8 @@ function comparador() {
 const Questions = () => {
 
   const [questionCount, setQuestionCount] = React.useState(0)
-  const [questionIconList, setQuestionIconList] = React.useState((<></>))
+  const [answers, setAnswers] = React.useState([])
+  const [questionIconList, setQuestionIconList] = React.useState([<></>])
   const questionList = getQuestions()
 
   function getQuestions () {
@@ -64,15 +65,15 @@ const Questions = () => {
             key={index} 
             index={index} 
             question={item} 
-            setQuestionCount={setQuestionCount} 
-            questionCount={questionCount}
+            setAnswers={setAnswers} 
+            answers={answers}
             questionIconList={questionIconList}
             setQuestionIconList={setQuestionIconList} 
           />
         )
       })}
 
-      <Statubar questionCount={questionCount} questionIconList={questionIconList} />
+      <Statubar answers={answers} questionIconList={questionIconList} />
     </div>
   )
 }

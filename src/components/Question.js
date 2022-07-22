@@ -2,27 +2,49 @@ import React from "react";
 import FlashCard from "./FlashCard";
 import hold from '../assets/images/setinha.png'
 
-const Question = ({ index, question, setQuestionCount, questionCount }) => {
+const Question = ({ index, question, setAnswers, answers, questionIconList, setQuestionIconList }) => {
     
   const [turned, setTurned] = React.useState(false);
   const [answer, setAnswer] = React.useState(null)
   const [answered, setAnswered] = React.useState(false)
 
-  function reply (answer) {
-    setQuestionCount(questionCount+1)
-    setAnswer(answer)
+  function reply (resp) {
+    setAnswer(resp)
     setAnswered(true)
+    setAnswers([...answers, resp])
+    setQuestionIconList([...questionIconList, getAnswerIcon(resp)])
+  }
+
+  function getAnswerIcon (resp) {
+    switch (resp.text) {
+      case 'not':
+        //questionIcon = <ion-icon name="close-circle"></ion-icon>
+        return <ion-icon class={`color1`} name="close-circle"></ion-icon>
+        
+      case 'half':
+        //questionIcon = <ion-icon name="help-circle"></ion-icon>
+        //setQuestionIconList([...questionIconList, (questionIcon)])
+        return <ion-icon class={`color2`} name="help-circle"></ion-icon>
+
+      case 'zap':
+        //questionIcon = <ion-icon name="checkmark-circle"></ion-icon>
+        //setQuestionIconList([...questionIconList, (questionIcon)])
+        return <ion-icon class={`color3`} name="checkmark-circle"></ion-icon>
+
+      default:
+        break
+    }
   }
 
   const AnsweredCard = () => {
-    switch (answer) {
-      case 1:
+    switch (answer.text) {
+      case 'not':
         return (<FlashCard index={index} color={1} answered={true}/>)
         
-      case 2:
+      case 'half':
         return (<FlashCard index={index} color={2} answered={true}/>)
 
-      case 3:
+      case 'zap':
         return (<FlashCard index={index} color={3} answered={true}/>)
 
       default:
@@ -40,9 +62,9 @@ const Question = ({ index, question, setQuestionCount, questionCount }) => {
         (<div className='flash-card showQuestion turned' >
           <p>{question.answer}</p>
           <span className="buttons">
-            <button onClick={() => reply(1)}>Não lembrei</button>
-            <button onClick={() => reply(2)}>Quase não lembrei</button>
-            <button onClick={() => reply(3)}>Zap!</button>
+            <button onClick={() => reply({text: 'not'})}>Não lembrei</button>
+            <button onClick={() => reply({text: 'half'})}>Quase não lembrei</button>
+            <button onClick={() => reply({text: 'zap'})}>Zap!</button>
           </span>
         </div>)
       )

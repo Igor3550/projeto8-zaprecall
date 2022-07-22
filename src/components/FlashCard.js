@@ -3,7 +3,7 @@ import Question from './Question';
 
 import play from '../assets/images/play.png'
 
-const FlashCard = ({ index, question, answered=false, color=0, setQuestionCount, questionCount, questionIconList, setQuestionIconList }) => {
+const FlashCard = ({ index, question, answered=false, color=0, setAnswers, answers, questionIconList, setQuestionIconList }) => {
 
   const [showQuestion, setShowQuestion] = React.useState(false);
   let questionIcon = (<></>)
@@ -12,7 +12,6 @@ const FlashCard = ({ index, question, answered=false, color=0, setQuestionCount,
     switch (color) {
       case 1:
         questionIcon = <ion-icon name="close-circle"></ion-icon>
-        //setQuestionIconList(questionIcon)
         return (questionIcon)
         
       case 2:
@@ -28,18 +27,17 @@ const FlashCard = ({ index, question, answered=false, color=0, setQuestionCount,
       default:
         break;
     }
-    return 
   }
 
   const Card = () => {
     return (
       answered ?
-        (<div className={`flash-card color${color}`} onClick={() => console.log() }>
+        (<div className={`flash-card color${color}`} >
           <p>Pergunta {index+1}</p>
           {getAnswerIcon()}
         </div>)
       :
-        (<div className="flash-card" onClick={() => setShowQuestion(true)}>
+        (<div className={`flash-card`} onClick={() => setShowQuestion(true)}>
         <p>Pergunta {index+1}</p>
         <img src={play} />
       </div>)
@@ -51,8 +49,10 @@ const FlashCard = ({ index, question, answered=false, color=0, setQuestionCount,
       (<Question 
         index={index} 
         question={question} 
-        questionCount={questionCount} 
-        setQuestionCount={setQuestionCount} 
+        answers={answers} 
+        setAnswers={setAnswers} 
+        setQuestionIconList={setQuestionIconList}
+        questionIconList={questionIconList}
       />)
     :
       (<Card />)
