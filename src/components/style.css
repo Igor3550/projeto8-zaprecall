@@ -40,6 +40,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+
 }
 
 .header {
@@ -88,7 +89,6 @@ body {
 
 .flash-card {
   width: 80%;
-  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +107,7 @@ body {
 }
 
 .showQuestion {
-  height: 150px;
+  min-height: 120px;
   position: relative;
   background-color: #FFFFD4;
 
@@ -184,7 +184,7 @@ body {
   font-size: 30px;
 }
 .result-message {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,7 +193,7 @@ body {
   font-family: Recursive;
   font-weight: 700;
   font-size: 18px;
-  padding: 5px;
+  padding: 10px;
 
   display: flex;
   align-items: center;
@@ -201,4 +201,21 @@ body {
 .result-message p{
   text-align: center;
   padding-bottom: 15px;
+}
+
+.restart-button {
+  width: 167px;
+  height: 32px;
+  margin: 15px;
+
+  background-color: #FB6B6B;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  
+  font-family: Recursive;
+  font-size: 14px;
+  color: white;
 }

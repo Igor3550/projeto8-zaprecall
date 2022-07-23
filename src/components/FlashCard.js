@@ -3,7 +3,18 @@ import Question from './Question';
 
 import play from '../assets/images/play.png'
 
-const FlashCard = ({ index, question, answered=false, color=0, setAnswers, answers, questionIconList, setQuestionIconList }) => {
+const FlashCard = ({ 
+  index, 
+  question, 
+  answered=false, 
+  color=0, 
+  setAnswers, 
+  answers, 
+  questionIconList, 
+  setQuestionIconList,
+  zapGoal,
+  setZapGoal
+}) => {
 
   const [showQuestion, setShowQuestion] = React.useState(false);
   let questionIcon = (<></>)

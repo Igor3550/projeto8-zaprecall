@@ -1,5 +1,6 @@
 import React from "react";
 
+import Landing from './Landing'
 import Header from "./Header";
 import Statubar from "./Statusbar";
 import FlashCard from "./FlashCard";
@@ -43,11 +44,13 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
 
-const Questions = () => {
+const Questions = ({ zapGoal, setZapGoal }) => {
 
-  const [questionCount, setQuestionCount] = React.useState(0)
   const [answers, setAnswers] = React.useState([])
   const [questionIconList, setQuestionIconList] = React.useState([<></>])
+  const [restartPage, setRestartPage] = React.useState(false)
+  //const [zapGoal, setZapGoal] = React.useState(1)
+
   const questionList = getQuestions()
 
   function getQuestions () {
@@ -56,6 +59,7 @@ const Questions = () => {
   }
 
   return (
+    restartPage ? <Landing setHideLandingPage={setRestartPage} hideLandingPage={restartPage}/> :
     <div className="questions">
       <Header />
       
@@ -73,7 +77,16 @@ const Questions = () => {
         )
       })}
 
-      <Statubar answers={answers} questionIconList={questionIconList} />
+      <Statubar 
+        answers={answers} 
+        setAnswers={setAnswers}
+        questionIconList={questionIconList} 
+        setQuestionIconList={setQuestionIconList}
+        restartPage={restartPage}
+        setRestartPage={setRestartPage}
+        zapGoal={zapGoal}
+        setZapGoal={setZapGoal}
+      />
     </div>
   )
 }
