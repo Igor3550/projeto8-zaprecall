@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from 'framer-motion';
+
 import Questions from "./Questions";
 
 import succesIcon from '../assets/images/party.png';
@@ -31,16 +33,20 @@ const Statubar = ({
   return (
     restartPage ? <Questions />
     : 
-      (<div className="statusbar">
+      (<motion.div initial={{ y: '100vh' }} animate={{ y: 0 }} className="statusbar">
         
         {resultMessage.title === '' ? <></> :
-          <div className="result-message" >
+          <motion.div 
+            className="result-message" 
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+          >
             <span>
               <img src={resultMessage.img} />
               {resultMessage.title}
             </span>
             <p>{resultMessage.text}</p>
-          </div>
+          </motion.div>
         }
 
         <p>{answers.length}/4 CONCLUÍDOS</p>
@@ -61,7 +67,7 @@ const Statubar = ({
             REINICIAR RECALL
           </button>
         }
-      </div>)
+      </motion.div>)
   )
 }
 

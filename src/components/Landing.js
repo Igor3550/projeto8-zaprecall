@@ -41,27 +41,35 @@ const Landing = ({
   }
 
   return (
-    <motion.div 
-      className="landingPage"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
-      <img src={logo} />
-      <h1>ZapRecall</h1>
-      {restartPage ?
-          <></>
-        :
-        <>
-          <Input />
-          <Select />
-        </>
+    
+    <div className="landingPage">
+      <motion.img 
+        initial={{ y: '-100vh'}} 
+        animate={{ y: 0 }} 
+        src={logo} 
+      />
+      <motion.div 
+        className="landingPageContext" 
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <h1>ZapRecall</h1>
+        {restartPage ?
+            <></>
+          :
+          <>
+            <Input />
+            <Select />
+          </>
+          }
+        {( zapGoal < 1 || zapGoal > 4 || zapDeck < 1) ? 
+          <button className='disable-button'>Iniciar Recall!</button>
+        : 
+          <button onClick={hidePage}>Iniciar Recall!</button>
         }
-      {( zapGoal < 1 || zapGoal > 4 || zapDeck < 1) ? 
-        <button className='disable-button'>Iniciar Recall!</button>
-      : 
-        <button onClick={hidePage}>Iniciar Recall!</button>
-      }
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }
 

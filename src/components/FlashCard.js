@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Question from './Question';
 
 import play from '../assets/images/play.png'
@@ -46,7 +47,10 @@ const FlashCard = ({
           {getAnswerIcon()}
         </div>)
       :
-        (<div className={`flash-card cursor-pointer`} onClick={() => setShowQuestion(true)}>
+      (<div 
+        className={`flash-card cursor-pointer`} 
+        onClick={() => setShowQuestion(true)}
+      >
         <p>Pergunta {index+1}</p>
         <img src={play} />
       </div>)

@@ -1,4 +1,5 @@
 import React from "react";
+
 import FlashCard from "./FlashCard";
 import hold from '../assets/images/setinha.png'
 
@@ -69,7 +70,9 @@ const Question = ({ index, question, setAnswers, answers, questionIconList, setQ
         </div>)
       )
     :
-      (<div className='flash-card showQuestion'>
+      (<div 
+        className='flash-card showQuestion'
+      >
         <p>{question.text}</p>
         <img className="cursor-pointer" src={hold} onClick={() => setTurned(true)}/>
       </div>)

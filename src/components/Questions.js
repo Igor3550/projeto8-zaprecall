@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import Landing from './Landing'
 import Header from "./Header";
@@ -123,23 +124,30 @@ const Questions = ({ zapGoal, setZapGoal, zapDeck, setZapDeck, restartPage, setR
 
   return (
     restartPage ? <Landing setHideLandingPage={setRestartPage} hideLandingPage={restartPage} restartPage={restartPage} /> :
-    <div className="questions">
+    <>
       <Header />
-      
-      {questionList.map((item, index) => {
-        return (
-          <FlashCard 
-            key={index} 
-            index={index} 
-            question={item} 
-            setAnswers={setAnswers} 
-            answers={answers}
-            questionIconList={questionIconList}
-            setQuestionIconList={setQuestionIconList} 
-          />
-        )
-      })}
+      <motion.div 
+        className="questions"
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }}  
+        transition={{ delay: 0.2 }}
+      >
+        
+        {questionList.map((item, index) => {
+          return (
+            <FlashCard 
+              key={index} 
+              index={index} 
+              question={item} 
+              setAnswers={setAnswers} 
+              answers={answers}
+              questionIconList={questionIconList}
+              setQuestionIconList={setQuestionIconList} 
+            />
+          )
+        })}
 
+      </motion.div>
       <Statubar 
         answers={answers} 
         setAnswers={setAnswers}
@@ -150,7 +158,7 @@ const Questions = ({ zapGoal, setZapGoal, zapDeck, setZapDeck, restartPage, setR
         zapGoal={zapGoal}
         setZapGoal={setZapGoal}
       />
-    </div>
+    </>
   )
 }
 

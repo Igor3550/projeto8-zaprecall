@@ -42,6 +42,16 @@ body {
   margin-top: 20px;
 }
 
+.landingPageContext {
+  font-family: Righteous, cursive;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .goal-input {
   width: 246px;
   height: 45px;
