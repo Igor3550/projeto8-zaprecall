@@ -40,7 +40,40 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+}
 
+.goal-input {
+  width: 246px;
+  height: 45px;
+  
+  font-family: Recursive;
+  font-weight: 400;
+  font-size: 14px;
+  color: #D70900;
+
+  margin: 10px;
+  border-radius: 4px;
+  border: 0;
+  padding: 10px;
+}
+
+.goal-input:placeholder {
+  color: #ADADAD;
+}
+
+.deck-select {
+  width: 246px;
+  height: 45px;
+  
+  font-family: Recursive;
+  font-weight: 400;
+  font-size: 14px;
+  color: #525252;
+
+  border-radius: 4px;
+  border: 0;
+  padding: 10px;
+  background-color: white;
 }
 
 .header {
@@ -218,4 +251,14 @@ body {
   font-family: Recursive;
   font-size: 14px;
   color: white;
+}
+
+.landingPage .disable-button {
+  background-color: #E8E8E8;
+  color: #C0C0C0;
+  box-shadow: 0 0 0 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

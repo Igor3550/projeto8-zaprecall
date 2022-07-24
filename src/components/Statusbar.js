@@ -4,18 +4,26 @@ import Questions from "./Questions";
 import succesIcon from '../assets/images/party.png';
 import failureIcon from '../assets/images/sad.png';
 
-const Statubar = ({ answers, setAnswers, questionIconList, setQuestionIconList, setRestartPage, restartPage }) => {
+const Statubar = ({ 
+  answers, 
+  setAnswers, 
+  questionIconList, 
+  setQuestionIconList, 
+  setRestartPage, 
+  restartPage, 
+  zapGoal 
+}) => {
 
   const [resultMessage, setResultMessage] = React.useState({title:'', text:'', img:succesIcon});
 
   if(answers.length > 3 && resultMessage.title === ''){
 
-    let isNot = answers.filter(answer => answer.text === 'not');
-    if(isNot.length > 0){
-      let message = 'Ainda faltam alguns... Mas não desanime!'
+    let isZapList = answers.filter(answer => answer.text === 'zap');
+    if(isZapList.length < zapGoal){
+      let message = `Você não cumpriu sua meta de ${zapGoal} zaps... Mas não desanime!`
       setResultMessage({title:"Putz...", text:message, img:failureIcon})
     }else{
-      let message = 'Você não esqueceu de nenhum flashcard!'
+      let message = `Você conseguiu bater sua meta de ${zapGoal} zaps!`
       setResultMessage({title:'Parabéns!', text:message, img:succesIcon})
     }
   }

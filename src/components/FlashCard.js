@@ -12,8 +12,6 @@ const FlashCard = ({
   answers, 
   questionIconList, 
   setQuestionIconList,
-  zapGoal,
-  setZapGoal
 }) => {
 
   const [showQuestion, setShowQuestion] = React.useState(false);
@@ -48,7 +46,7 @@ const FlashCard = ({
           {getAnswerIcon()}
         </div>)
       :
-        (<div className={`flash-card`} onClick={() => setShowQuestion(true)}>
+        (<div className={`flash-card cursor-pointer`} onClick={() => setShowQuestion(true)}>
         <p>Pergunta {index+1}</p>
         <img src={play} />
       </div>)

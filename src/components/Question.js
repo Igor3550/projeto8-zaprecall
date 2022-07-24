@@ -71,7 +71,7 @@ const Question = ({ index, question, setAnswers, answers, questionIconList, setQ
     :
       (<div className='flash-card showQuestion'>
         <p>{question.text}</p>
-        <img src={hold} onClick={() => setTurned(true)}/>
+        <img className="cursor-pointer" src={hold} onClick={() => setTurned(true)}/>
       </div>)
   )
 }
