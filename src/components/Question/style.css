@@ -1,0 +1,62 @@
+.showQuestion {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: initial;
+  padding: 10px;
+  margin: 10px;
+  min-height: 120px;
+  position: relative;
+  
+  background-color: #FFFFD4;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  color: #333333;
+  
+  font-family: Recursive;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.2s linear;
+
+}
+
+.showQuestion img{
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.turned {
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttons button {
+  width: 85px;
+  height: 37px;
+
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-family: Recursive;
+  font-size: 12px;
+}
+
+.buttons :nth-child(1) {
+  background-color: #FF3030;
+}
+
+.buttons :nth-child(2) {
+  background-color: #FF922E;
+}
+.buttons :nth-child(3) {
+  background-color: #2FBE34;
+}

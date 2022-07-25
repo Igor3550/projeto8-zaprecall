@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion'
 
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
+import './style.css'
 
 const Landing = ({ 
   setHideLandingPage, 

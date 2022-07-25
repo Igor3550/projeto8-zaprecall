@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Question from './Question';
+import Question from '../Question/Question';
 
-import play from '../assets/images/play.png'
+import play from '../../assets/images/play.png'
+import './style.css'
 
 const FlashCard = ({ 
   index, 

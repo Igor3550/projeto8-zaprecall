@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import logo from '../assets/images/logo-pequeno.png';
+
+import logo from '../../assets/images/logo-pequeno.png';
+import './style.css'
 
 const Header = () => {
   return (

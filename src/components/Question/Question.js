@@ -1,7 +1,8 @@
 import React from "react";
 
-import FlashCard from "./FlashCard";
-import hold from '../assets/images/setinha.png'
+import FlashCard from "../FlashCard/FlashCard";
+import hold from '../../assets/images/setinha.png'
+import './style.css';
 
 const Question = ({ index, question, setAnswers, answers, questionIconList, setQuestionIconList }) => {
     
@@ -60,7 +61,7 @@ const Question = ({ index, question, setAnswers, answers, questionIconList, setQ
       answered ? 
         <AnsweredCard />  
       :
-        (<div className='flash-card showQuestion turned' >
+        (<div className='showQuestion turned' >
           <p>{question.answer}</p>
           <span className="buttons">
             <button onClick={() => reply({text: 'not'})}>Não lembrei</button>
@@ -71,7 +72,7 @@ const Question = ({ index, question, setAnswers, answers, questionIconList, setQ
       )
     :
       (<div 
-        className='flash-card showQuestion'
+        className='showQuestion'
       >
         <p>{question.text}</p>
         <img className="cursor-pointer" src={hold} onClick={() => setTurned(true)}/>

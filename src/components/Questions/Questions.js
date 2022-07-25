@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Landing from './Landing'
-import Header from "./Header";
-import Statubar from "./Statusbar";
-import FlashCard from "./FlashCard";
+import Landing from '../Landing/Landing'
+import Header from "../Header/Header";
+import Statubar from "../StatusBar/Statusbar";
+import FlashCard from "../FlashCard/FlashCard";
+import './style.css'
 
 const decksArray = [
   {

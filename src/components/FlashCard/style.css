@@ -1,0 +1,35 @@
+.flash-card {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+
+  font-family: Recursive;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 1s linear;
+}
+
+.flash-card ion-icon {
+  font-size: 30px;
+}
+
+.color1 {
+  color: #FF3030;
+  text-decoration: line-through;
+}
+.color2 {
+  color: #FF922E;
+  text-decoration: line-through;
+}
+.color3 {
+  color: #2FBE34;
+  text-decoration: line-through;
+}

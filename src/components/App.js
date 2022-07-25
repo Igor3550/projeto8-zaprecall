@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Landing from './Landing'
-import Questions from './Questions';
+import Landing from './Landing/Landing'
+import Questions from './Questions/Questions';
 import './style.css';
 
 

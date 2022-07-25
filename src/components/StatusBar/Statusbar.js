@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from 'framer-motion';
 
-import Questions from "./Questions";
+import Questions from "../Questions/Questions";
 
-import succesIcon from '../assets/images/party.png';
-import failureIcon from '../assets/images/sad.png';
+import succesIcon from '../../assets/images/party.png';
+import failureIcon from '../../assets/images/sad.png';
+import './style.css'
 
 const Statubar = ({ 
   answers, 

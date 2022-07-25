@@ -1,0 +1,18 @@
+.header {
+  font-family: Righteous, cursive;
+  color: white;
+  font-weight: 400;
+
+  display: flex;
+  width: 100vw;
+  max-width: 614px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.header img {
+  width: 52px;
+  height: 60px;
+  margin-right: 20px;
+}
